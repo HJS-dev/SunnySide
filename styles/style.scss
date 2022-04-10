@@ -1,0 +1,26 @@
+@import 'components/Baisc';
+@import './components/Header';
+@import './components/Hero';
+@import './components/Testimonials';
+@import './components/Gallery-section';
+@import './components/Footer';
+
+
+.content-wrapper{
+    width: 100%;
+    max-width: 475px;
+    margin: auto;
+}
+    @media (min-width: 768px) {
+      .content-wrapper{
+          max-width: 900px;
+      }     
+    };
+
+    @media (min-width: 1024px){
+        .content-wrapper{
+            max-width: 1100px;
+        }
+    }
+
+

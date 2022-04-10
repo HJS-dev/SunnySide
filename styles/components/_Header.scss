@@ -1,0 +1,151 @@
+.header {
+  position: relative;
+  text-align: center;
+
+  // height: 30vh;
+  &__nav {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    padding: 3.5rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .menu {
+      opacity: 0;
+      clip-path: circle(0% at 100% 1%);
+
+      &--active {
+        transition: clip-path 2s ease-out;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        position: absolute;
+        top: 12rem;
+        right: 5%;
+        z-index: 12;
+        height: 40rem;
+        width: 88%;
+        font-size: 2rem;
+
+        a {
+          font-family: $Barlow;
+          color: $Dark-grayish-blue;
+          text-transform: none;
+        }
+
+        :last-child {
+          a {
+            color: black;
+            text-transform: uppercase;
+            padding: 2rem 4rem;
+            border-radius: 5rem;
+            background: $Yellow;
+          }
+
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: -2.5rem;
+          right: 0;
+          width: 0;
+          height: 0;
+          border-bottom: 40px solid white;
+          border-left: 40px solid transparent;
+        }
+
+        opacity: 1;
+        clip-path: circle(150vmax at 100%);
+        transition: opacity clip-path 2s ease-in;
+      }
+    }
+  }
+
+  &__logo {
+    width: 33%;
+    height: 25%;
+  }
+
+  &__heading {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $White;
+    font-size: 2.5rem;
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+
+    :not(:nth-child(1)) {
+      margin-top: 7rem;
+    }
+  }
+
+  .img-header {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media only screen and(min-width: 768px) {
+  .header {
+    .menu {
+      display: flex;
+      opacity: 1;
+      clip-path: none;
+
+      li:nth-last-child(n) {
+        margin-right: 1.75rem;
+        padding: 1rem 1.75rem;
+        border-radius: 20px;
+
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.203);
+
+          a {
+            color: rgb(255, 255, 255);
+          }
+        }
+      }
+
+      a {
+        color: $White;
+        font-size: 1.5rem;
+      }
+
+    }
+
+    .hamburger-menu {
+      display: none;
+    }
+
+    &__logo,
+    &__heading {
+      transform: scale(.6, .6)
+    }
+
+    &__heading {
+      top: 25%;
+    }
+  }
+}
+
+@media only screen and(min-width: 1024px) {
+  .header {
+    &__heading {
+      transform: none;
+      top: 30%;
+    }
+  }
+}
