@@ -186,8 +186,8 @@ li {
     display: none;
   }
   .header__logo, .header__heading {
-    -webkit-transform: scale(0.6, 0.6);
-            transform: scale(0.6, 0.6);
+    -webkit-transform: scale(0.4, 0.4);
+            transform: scale(0.4, 0.4);
   }
   .header__heading {
     top: 25%;
